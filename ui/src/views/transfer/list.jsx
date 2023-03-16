@@ -96,11 +96,11 @@ const columns = [
     render: (text, record, index) => {
       return text === "success" ? (
         <span className="green">
-          <CheckCircleOutlined /> {text}
+          <img width={27} height={31} src={process.env.PUBLIC_URL + "/img/ok.png"} />
         </span>
       ) : (
         <span className="red">
-          <ExclamationCircleOutlined /> {text}
+          <img width={25} height={27} src={process.env.PUBLIC_URL + "/img/error.png"} />
         </span>
       );
     },

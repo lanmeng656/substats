@@ -69,24 +69,6 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
-const items = [
-  getItem(
-    "HOME",
-    "/",
-    <img width={18} src={process.env.PUBLIC_URL + "/img/home.png"} />
-  ),
-  getItem(
-    "CHAIN",
-    "chain",
-    <img width={18} src={process.env.PUBLIC_URL + "/img/tech.png"} />,
-    [
-      getItem("Blocks", "/block/"),
-      getItem("Transactions", "/transfer/"),
-      getItem("Accounts", "/account/"),
-    ]
-  ),
-];
-
 function Header({ className }) {
   const navigate = useNavigate();
   let location = useLocation();
@@ -97,6 +79,30 @@ function Header({ className }) {
       navigate(key);
     }
   };
+
+  let pathArr = window.location.pathname.split("/");
+  console.log("pathArr", pathArr);
+  const items = [
+    getItem(
+      "HOME",
+      "/",
+      pathArr[1] != "" ? (
+        <img width={16} src={process.env.PUBLIC_URL + "/img/home2.png"} />
+      ) : (
+        <img width={16} src={process.env.PUBLIC_URL + "/img/home.svg"} />
+      )
+    ),
+    getItem(
+      "CHAIN",
+      "chain",
+      <img width={18} src={process.env.PUBLIC_URL + "/img/chain.png"} />,
+      [
+        getItem("Blocks", "/block/"),
+        getItem("Transactions", "/transfer/"),
+        getItem("Accounts", "/account/"),
+      ]
+    ),
+  ];
 
   useEffect(() => {
     // console.log(location);
@@ -212,8 +218,8 @@ export default styled(Header)`
       text-align: left;
       background-color: #7352ce;
       color: #fff;
-	  text-align: center;
-	  border-radius: 8px;
+      text-align: center;
+      border-radius: 8px;
     }
   }
 `;

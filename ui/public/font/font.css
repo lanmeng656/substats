@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("./Montserrat/Montserrat-Regular-8.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url("./Montserrat/Montserrat-SemiBold-9.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Michroma-Regular";
+    src: url("./Michroma.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("./manrope/manrope-regular-6.otf");
+    font-weight: normal;
+    font-style: normal;
+}
