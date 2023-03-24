@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url('Gotham-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}@font-face {
+    font-family: "Gotham-Bold";
+    src: url('Gotham-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}@font-face {
+    font-family: "Gotham-MediumItalic";
+    src: url('Gotham-MediumItalic.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Open-Sans";
+    src: url('Open-Sans.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Open-Sans-Bold";
+    src: url('Open-Sans-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Open-Sans-Extrabold-Italic";
+    src: url('Open-Sans-Extrabold-Italic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Open-Sans-Light";
+    src: url('Open-Sans-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Poiret-One";
+    src: url('Poiret-One.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

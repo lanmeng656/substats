@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.85f343c6.css",
-    "main.js": "/static/js/main.39a32e8d.js",
+    "main.css": "/static/css/main.5f9719df.css",
+    "main.js": "/static/js/main.2a6049e0.js",
+    "static/media/Gotham-Bold.otf": "/static/media/Gotham-Bold.511bff968009fbd4430c.otf",
     "index.html": "/index.html",
-    "main.85f343c6.css.map": "/static/css/main.85f343c6.css.map"
+    "main.5f9719df.css.map": "/static/css/main.5f9719df.css.map"
   },
   "entrypoints": [
-    "static/css/main.85f343c6.css",
-    "static/js/main.39a32e8d.js"
+    "static/css/main.5f9719df.css",
+    "static/js/main.2a6049e0.js"
   ]
 }
