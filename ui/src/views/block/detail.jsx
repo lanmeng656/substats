@@ -226,11 +226,11 @@ function Main({ className }) {
         render: (text, record, index) => {
           return text === "success" ? (
             <span className="green">
-              <CheckCircleOutlined /> {text}
+              <img width={27} height={31} src={process.env.PUBLIC_URL + "/img/ok.png"} />
             </span>
           ) : (
             <span className="red">
-              <ExclamationCircleOutlined /> {text}
+              <img width={25} height={27} src={process.env.PUBLIC_URL + "/img/error.png"} />
             </span>
           );
         },
@@ -310,7 +310,7 @@ function Main({ className }) {
                 <div className="mini-block">
                   <div>Status</div>
                   <label style={{ color: "green" }}>
-                    Comfirmed <CheckCircleOutlined />
+                    Comfirmed <img width={27} style={{marginTop: "-9px"}} height={31} src={process.env.PUBLIC_URL + "/img/ok.png"} />
                   </label>
                 </div>
               </div>

@@ -34,6 +34,7 @@ import webconfig from "@/webconfig";
 const { Option } = Select;
 const { Search } = Input;
 let ignore = false;
+let keyword2="";
 
 const SearchBar = ({ className }) => {
   const [keyword, setKeyword] = useState();
@@ -59,28 +60,43 @@ const SearchBar = ({ className }) => {
       }
       setSearchType(type);
       setKeyword(v);
-    }    
+      keyword2=v;
+    }
+    document.onkeydown = function (event) {
+      console.log('event.keyCode',event.keyCode);
+      var e = event || window.event || arguments.callee.caller.arguments[0];
+      if (e && e.keyCode == 13) {
+        // enter 键
+        //要做的事情   
+        let v=document.getElementById("searchInput").value;
+        if(!v){
+          return;
+        }
+        setKeyword(v);
+        keyword2=v; 
+        onSearch(event);
+      }
+    };
   }, []);
 
   const onSearch = (e) => {
-    if (e.code && e.code == "Enter" && e.target.value) {
-      setKeyword(e.target.value);
-    }
     let type = getSearchType();
-    let url = "/" + type.toLowerCase() + "/" + keyword;
+    if(!type) return console.log('keyword is null');
+    let url = "/" + type.toLowerCase() + "/" + keyword2;
     navigate(url);
   };
   const getSearchType = () => {
-    let type = "Transfer";
-    if (keyword.length == 48) {
+    let type = "Transfer";    
+    if (keyword2.length == 48) {
       type = "Account";
-    } else if (keyword.length < 15 && !isNaN(keyword)) {
+    } else if (keyword2.length < 15 && !isNaN(keyword2)) {
       type = "Block";
     }
     return type;
   };
   const onChangeKeyword = (e) => {
     setKeyword(e.target.value);
+    keyword2=e.target.value
   };
 
   return (
@@ -91,7 +107,19 @@ const SearchBar = ({ className }) => {
             The {webconfig.name} Blockchain Explorer
           </div>
         </div>
-        <Search
+        <div className="search-input">
+          <input
+          id="searchInput"
+            type="text"
+            placeholder="Block Height/Transaction Hash/Account"
+            onChange={onChangeKeyword}
+            onKeyPress={onChangeKeyword}
+            onKeyUp={onChangeKeyword}
+            onInput={onChangeKeyword}
+          />
+          <span onClick={onSearch}>Search</span>
+        </div>
+        {/* <Search
           className="search-box"
           placeholder="Block Height/Transaction Hash/Account"
           onSearch={onSearch}
@@ -110,7 +138,7 @@ const SearchBar = ({ className }) => {
           }}
           id="searchInput"
           size="large"
-        />
+        /> */}
       </div>
     </div>
   );
@@ -126,7 +154,36 @@ export default React.memo(styled(SearchBar)`
     display: block;
     overflow: hidden;
     margin: 50px auto;
-    max-width: 710px;
+    max-width: 910px;
+  }
+  .search-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: "hidden";
+    width: "100%";
+    input {
+      border: 1px solid #424242;
+      border-radius: 8px;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-indent: 8px;
+      outline: none;
+    }
+    span {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 6px;
+      width: 126px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      cursor: default;
+    }
   }
   @media screen and (max-width: 900px) {
     .top-price-btn {

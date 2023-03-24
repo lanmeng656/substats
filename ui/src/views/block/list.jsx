@@ -62,7 +62,30 @@ const columns = [
     sorter: true,
   },
   {
-    title: "Hash",
+    title: "Time",
+    dataIndex: "timestamp",
+    key: "timestamp",
+    width: "20%",
+    showType: "datetime",
+    tpl:"fromNow",
+    sorter: true,
+  },
+  {
+    title: "Extrinsics",
+    dataIndex: "txCount",
+    key: "txCount",
+    width: "10%",
+    sorter: true,
+  },  
+  {
+    title: "Events",
+    dataIndex: "eventCount",
+    key: "eventCount",
+    width: "10%",
+    sorter: true,
+  },  
+  {
+    title: "Block Hash",
     dataIndex: "hash",
     key: "hash",
     width: "30%",
@@ -78,22 +101,17 @@ const columns = [
     textWrap: "word-break",
     ellipsis: true,
     showType: "copy",
-  },
+  },  
   {
-    title: "Transactions",
-    dataIndex: "txCount",
-    key: "txCount",
-    width: "10%",
-    sorter: true,
+    title: "Result",
+    dataIndex: "timestamp2",
+    key: "timestamp2",
+    width: "5%",
+    render:()=>{
+      return <img width={27} height={31} src={process.env.PUBLIC_URL + "/img/ok.png"} />
+    }
   },
-  {
-    title: "Time",
-    dataIndex: "timestamp",
-    key: "timestamp",
-    width: "20%",
-    showType: "datetime",
-    sorter: true,
-  },
+  
 ];
 
 const Main = ({ ...propsS }) => {
@@ -111,7 +129,7 @@ const Main = ({ ...propsS }) => {
       method: queryDB.list,
     },
     titleBar: {
-      title: "Blocks",
+      title: "All Blocks",
     },
     table: {
       columns,

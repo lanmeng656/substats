@@ -44,7 +44,7 @@ const SearchBar = ({ className, stakingPer }) => {
 			innerRadius: 0.66,
 			label: {
 				type: "inner",
-				offset: "-50%",
+				offset: "-1050%",
 				content: "{value}",
 				style: {
 					textAlign: "center",

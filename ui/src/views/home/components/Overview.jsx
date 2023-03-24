@@ -129,7 +129,7 @@ const SearchBar = ({ className, space }) => {
         <div className="box1-left">
           <div className="block">{webconfig.name} / USDT</div>
           <span className="block">{lastItem.dataValue}</span>
-          <label className="block">{lastItem.per}%</label>
+          <font className="block">{lastItem.per}%</font>
         </div>
         <div className="box1-right">
           <Column list={list} />

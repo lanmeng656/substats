@@ -84,7 +84,7 @@ const SearchBar = ({ className, space }) => {
       shape: "circular",
       style: {
         fill: "white",
-        stroke: "#5B8FF9",
+        stroke: "#000",
         lineWidth: 1,
       },
     },

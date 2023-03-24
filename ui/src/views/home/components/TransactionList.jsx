@@ -81,10 +81,20 @@ const Main = ({ className, list }) => {
               )}
             </div>
             <div className="line-right">
-              <span>
-                <CheckCircleOutlined style={{ color: "green", fontSize: 20 }} />
-              </span>
-              <div>{t.timestamp_str}</div>
+              <span>{t.timestamp_str}&nbsp;&nbsp;</span>
+              {t.status == "success" ? (
+                <img
+                  width={27}
+                  height={31}
+                  src={process.env.PUBLIC_URL + "/img/ok.png"}
+                />
+              ) : (
+                <img
+                  width={25}
+                  height={27}
+                  src={process.env.PUBLIC_URL + "/img/error.png"}
+                />
+              )}
             </div>
           </div>
         );
@@ -104,9 +114,9 @@ export default React.memo(styled(Main)`
     width: 100%;
     border-bottom: 1px solid #eee;
     padding: 10px;
-    cursor:pointer;
+    cursor: pointer;
     .line-left {
-      width: 70%;
+      width: 50%;
       display: block;
       overflow: hidden;
       float: left;
@@ -117,13 +127,19 @@ export default React.memo(styled(Main)`
       }
     }
     .line-right {
-      width: 30%;
-      display: block;
+      width: 50%;
+      display: flex;
       overflow: hidden;
       float: right;
       text-align: right;
       font-size: 14px;
       font-weight: bold;
+      align-items: center;
+      margin-top: 10px;
+      span {
+        line-height: 30px;
+        flex-grow: 1;
+      }
     }
   }
 `);
